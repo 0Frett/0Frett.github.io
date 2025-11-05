@@ -1,1 +1,193 @@
-<!doctype html><title>Hello</title>Hello
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Intro Homepage</title>
+  <meta name="description" content="Personal academic homepage: research, projects, publications, and contact." />
+  <meta name="color-scheme" content="light dark" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Your Name — Intro Homepage" />
+  <meta property="og:description" content="Personal academic homepage: research, projects, publications, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/0?v=4" />
+
+  <!-- Tailwind (CDN) for quick styling; remove if you prefer custom CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (optional font sizing tweaks)
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] } } }
+    };
+  </script>
+  <style>
+    /* Light/Dark background transition */
+    html { transition: background-color .2s ease, color .2s ease; }
+    /* Minimalistic print styles */
+    @media print { nav, .no-print { display:none !important } a{ text-decoration:none } }
+  </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "url": "https://your-username.github.io/",
+    "sameAs": [
+      "https://github.com/your-username",
+      "https://scholar.google.com/citations?user=YOURID",
+      "https://www.linkedin.com/in/your-username/"
+    ],
+    "jobTitle": "Graduate Student",
+    "affiliation": {"@type": "Organization", "name": "Your University"}
+  }
+  </script>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+  <!-- Sticky nav -->
+  <nav class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-zinc-950/70 border-b border-zinc-200 dark:border-zinc-800">
+    <div class="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="font-semibold">Your Name</a>
+      <div class="flex items-center gap-3">
+        <a href="#about" class="hover:opacity-75">About</a>
+        <a href="#publications" class="hover:opacity-75">Publications</a>
+        <a href="#projects" class="hover:opacity-75">Projects</a>
+        <a href="#contact" class="hover:opacity-75">Contact</a>
+        <button id="themeToggle" class="ml-2 rounded-xl px-3 py-1 border border-zinc-300 dark:border-zinc-700 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800" aria-label="Toggle theme">☀️/🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="top" class="mx-auto max-w-4xl px-4 py-16">
+    <div class="grid md:grid-cols-[1fr_auto] items-center gap-8">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">Your Name <span class="text-zinc-400 dark:text-zinc-500">(Your Native Name)</span></h1>
+        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">Graduate student @ Your Lab, Your University. Researching <span class="font-medium">LLMs</span>, <span class="font-medium">uncertainty</span>, and <span class="font-medium">cross‑lingual knowledge transfer</span>.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#publications" class="rounded-xl px-4 py-2 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800">Publications</a>
+          <a href="#projects" class="rounded-xl px-4 py-2 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800">Projects</a>
+          <a href="cv.pdf" class="rounded-xl px-4 py-2 bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 hover:opacity-90">Download CV</a>
+        </div>
+      </div>
+      <img src="https://avatars.githubusercontent.com/u/0?v=4" alt="Profile" class="w-36 h-36 md:w-40 md:h-40 rounded-2xl object-cover border border-zinc-200 dark:border-zinc-800">
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="mx-auto max-w-4xl px-4 py-10 border-t border-zinc-200 dark:border-zinc-800">
+    <h2 class="text-2xl font-semibold">About</h2>
+    <p class="mt-3 text-zinc-700 dark:text-zinc-300">I’m a master’s student in the <strong>MSLab</strong> at <strong>NTU CSIE</strong> (advisor: Prof. X). My work focuses on <em>target‑aware LLM search</em>, <em>uncertainty estimation</em>, and <em>multilingual knowledge transfer</em>. I enjoy building end‑to‑end evaluation pipelines and clean visualizations.</p>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="mx-auto max-w-4xl px-4 py-10 border-t border-zinc-200 dark:border-zinc-800">
+    <h2 class="text-2xl font-semibold">Publications & Preprints</h2>
+    <ol class="mt-4 space-y-4 list-decimal pl-6">
+      <li>
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="font-medium">Benchmarking Uncertainty Metrics for Target‑Aware LLM Search</p>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400">Your Name, Coauthors. <span class="italic">Under review</span>, 2025.</p>
+            <div class="mt-2 flex flex-wrap gap-2 text-sm">
+              <a class="underline" href="#">PDF</a>
+              <a class="underline" href="#">Code</a>
+              <button class="underline text-left" data-bibtex-toggle>BibTeX</button>
+            </div>
+            <pre class="mt-2 hidden rounded-xl bg-zinc-100 dark:bg-zinc-900 p-3 text-xs overflow-x-auto" data-bibtex>
+@inproceedings{your2025uncertainty,
+  title={Benchmarking Uncertainty Metrics for Target-Aware LLM Search},
+  author={Your Name and Coauthors},
+  year={2025}
+}
+            </pre>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p class="font-medium">LiveCLKTBench: A Refreshable Multilingual Benchmark for Cross‑Lingual Knowledge Transfer</p>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400">Your Name, Coauthors. <span class="italic">Preprint</span>, 2025.</p>
+        <div class="mt-2 flex flex-wrap gap-2 text-sm">
+          <a class="underline" href="#">PDF</a>
+          <a class="underline" href="#">Code</a>
+          <button class="underline text-left" data-bibtex-toggle>BibTeX</button>
+        </div>
+        <pre class="mt-2 hidden rounded-xl bg-zinc-100 dark:bg-zinc-900 p-3 text-xs overflow-x-auto" data-bibtex>
+@article{your2025liveclktbench,
+  title={LiveCLKTBench: A Refreshable Multilingual Benchmark for Cross-Lingual Knowledge Transfer},
+  author={Your Name and Coauthors},
+  year={2025},
+  journal={arXiv preprint}
+}
+        </pre>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="mx-auto max-w-4xl px-4 py-10 border-t border-zinc-200 dark:border-zinc-800">
+    <h2 class="text-2xl font-semibold">Selected Projects</h2>
+    <div class="mt-5 grid md:grid-cols-2 gap-4">
+      <article class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4">
+        <h3 class="font-medium">Distribution Understanding from Comments</h3>
+        <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">End‑to‑end pipeline for stance/target distributions with bootstrap CIs, multi‑language support, and heatmap visualizations.</p>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a class="underline" href="#">Repo</a>
+          <a class="underline" href="#">Demo</a>
+        </div>
+      </article>
+      <article class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4">
+        <h3 class="font-medium">Uncertainty‑Guided Reasoning</h3>
+        <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Comparing answer/correctness/aleatoric/epistemic uncertainty to steer ToT/LATS‑style search strategies.</p>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a class="underline" href="#">Paper</a>
+          <a class="underline" href="#">Code</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="mx-auto max-w-4xl px-4 py-10 border-t border-zinc-200 dark:border-zinc-800">
+    <h2 class="text-2xl font-semibold">Contact</h2>
+    <ul class="mt-3 space-y-2 text-zinc-700 dark:text-zinc-300">
+      <li>Email: <a class="underline" href="mailto:you@example.com">you@example.com</a></li>
+      <li>GitHub: <a class="underline" href="https://github.com/your-username">@your-username</a></li>
+      <li>Google Scholar: <a class="underline" href="https://scholar.google.com/citations?user=YOURID">Profile</a></li>
+      <li>Twitter/X: <a class="underline" href="https://x.com/your-handle">@your-handle</a></li>
+    </ul>
+  </section>
+
+  <footer class="mx-auto max-w-4xl px-4 py-8 text-sm text-zinc-500 border-t border-zinc-200 dark:border-zinc-800">
+    © <span id="year"></span> Your Name. Built with Tailwind. Hosted on GitHub Pages.
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme persistence
+    const key = 'prefers-dark';
+    function setTheme(dark) {
+      document.documentElement.classList.toggle('dark', dark);
+      localStorage.setItem(key, dark ? '1' : '0');
+    }
+    const saved = localStorage.getItem(key);
+    const prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(saved ? saved === '1' : prefers);
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      setTheme(!document.documentElement.classList.contains('dark'));
+    });
+
+    // BibTeX toggles
+    document.querySelectorAll('[data-bibtex-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pre = btn.parentElement.parentElement.querySelector('[data-bibtex]');
+        if (pre) pre.classList.toggle('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
+

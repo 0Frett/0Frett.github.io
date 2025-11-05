@@ -3,164 +3,323 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Intro Homepage</title>
-  <meta name="description" content="Personal academic homepage: research, projects, publications, and contact." />
+  <title>Pei‑Fu (Fred) Guo — Home</title>
+  <meta name="description" content="Pei‑Fu (Fred) Guo — M.S. student at NTU CSIE (MSLab). Research: LLMs, uncertainty, cross‑lingual knowledge transfer." />
   <meta name="color-scheme" content="light dark" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Your Name — Intro Homepage" />
-  <meta property="og:description" content="Personal academic homepage: research, projects, publications, and contact." />
+  <!-- Open Graph — TODO: update \"og:title\", \"og:description\", and especially \"og:image\" to your own avatar or banner URL -->
+  <meta property="og:title" content="Pei‑Fu (Fred) Guo — Home" />
+  <meta property="og:description" content="M.S. student at NTU CSIE (MSLab). Research: LLMs, uncertainty, cross‑lingual knowledge transfer." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/0?v=4" />
+  <!-- <meta property="og:image" content="https://avatars.githubusercontent.com/u/0?v=4" /> TODO: replace with your image URL -->
+  <meta property="og:image" content="https://0Frett.github.io/figure.jpg" />
+  <!-- Early theme apply (prevents initial flash) -->
+  <script>(function(){try{var s=localStorage.getItem('prefers-dark');var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='1'||(!s&&p)){document.documentElement.classList.add('dark');}}catch(e){}})();</script>
 
-  <!-- Tailwind (CDN) for quick styling; remove if you prefer custom CSS -->
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Tailwind config (optional font sizing tweaks)
-    tailwind.config = {
-      theme: { extend: { fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] } } }
-    };
+    tailwind.config = { darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto"] },
+          maxWidth: { 'content': '1100px' }
+        }
+      }
+    }
   </script>
   <style>
-    /* Light/Dark background transition */
-    html { transition: background-color .2s ease, color .2s ease; }
-    /* Minimalistic print styles */
-    @media print { nav, .no-print { display:none !important } a{ text-decoration:none } }
+    @media print { .no-print, nav { display:none !important } a{ text-decoration:none } }
   </style>
 
-  <!-- Structured data -->
+  <!-- Structured data — TODO: update \"url\", replace Scholar YOURID, and your LinkedIn/profile links -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Your Name",
-    "url": "https://your-username.github.io/",
+    "name": "Pei‑Fu (Fred) Guo",
+    "url": "https://0Frett.github.io/",
     "sameAs": [
-      "https://github.com/your-username",
-      "https://scholar.google.com/citations?user=YOURID",
+      "https://github.com/0Frett",
+      "https://scholar.google.com/citations?user=aDp7aUoAAAAJ&hl=zh-TW",
       "https://www.linkedin.com/in/your-username/"
     ],
     "jobTitle": "Graduate Student",
-    "affiliation": {"@type": "Organization", "name": "Your University"}
+    "affiliation": {"@type": "Organization", "name": "National Taiwan University (MSLab)"}
   }
   </script>
 </head>
 <body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
-  <!-- Sticky nav -->
-  <nav class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-zinc-950/70 border-b border-zinc-200 dark:border-zinc-800">
-    <div class="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
-      <a href="#top" class="font-semibold">Your Name</a>
-      <div class="flex items-center gap-3">
+  <!-- Top bar like AcademicPages header -->
+  <nav class="no-print sticky top-0 z-50 border-b border-zinc-200 dark:border-zinc-800 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-zinc-950/70">
+    <div class="mx-auto max-w-content px-4 py-3 flex items-center justify-between">
+      <!-- TODO: navbar display name -->
+      <a href="#top" class="font-semibold tracking-tight">Pei‑Fu Guo</a>
+      <div class="flex items-center gap-4 text-sm">
         <a href="#about" class="hover:opacity-75">About</a>
         <a href="#publications" class="hover:opacity-75">Publications</a>
-        <a href="#projects" class="hover:opacity-75">Projects</a>
-        <a href="#contact" class="hover:opacity-75">Contact</a>
-        <button id="themeToggle" class="ml-2 rounded-xl px-3 py-1 border border-zinc-300 dark:border-zinc-700 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800" aria-label="Toggle theme">☀️/🌙</button>
+        <a href="#experience" class="hover:opacity-75">Experience</a>
+        <!-- <a href="#contact" class="hover:opacity-75">Contact</a> -->
+        <button id="themeToggle" class="rounded-lg px-3 py-1 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800" aria-label="Toggle theme">☀️/🌙</button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header id="top" class="mx-auto max-w-4xl px-4 py-16">
-    <div class="grid md:grid-cols-[1fr_auto] items-center gap-8">
-      <div>
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight">Your Name <span class="text-zinc-400 dark:text-zinc-500">(Your Native Name)</span></h1>
-        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">Graduate student @ Your Lab, Your University. Researching <span class="font-medium">LLMs</span>, <span class="font-medium">uncertainty</span>, and <span class="font-medium">cross‑lingual knowledge transfer</span>.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#publications" class="rounded-xl px-4 py-2 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800">Publications</a>
-          <a href="#projects" class="rounded-xl px-4 py-2 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800">Projects</a>
-          <a href="cv.pdf" class="rounded-xl px-4 py-2 bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 hover:opacity-90">Download CV</a>
+  <!-- Main two-column layout inspired by AcademicPages -->
+  <main id="top" class="mx-auto max-w-content px-4 md:px-6 py-8 md:py-12">
+    <div class="grid gap-8 md:gap-10 md:grid-cols-[280px,1fr]">
+      <!-- Sidebar profile card -->
+      <aside class="md:sticky md:top-20 self-start">
+        <div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5">
+          <!-- TODO: Replace avatar URL with your own image path (e.g., images/me.jpg) -->
+          <!-- <img src="https://avatars.githubusercontent.com/u/0?v=4" alt="Profile" class="w-40 h-40 mx-auto rounded-xl object-cover border border-zinc-200 dark:border-zinc-800"> -->
+          <img src="figure.jpg" alt="Pei-Fu Guo" class="w-30 h-40 mx-auto rounded-xl object-cover border border-zinc-200 dark:border-zinc-800">
+
+          <!-- TODO: Your full name (display) -->
+          <h1 class="mt-4 text-center text-2xl font-semibold">Pei‑Fu (Fred) Guo</h1>
+          <!-- TODO: Your short tagline/affiliation -->
+          <p class="mt-1 text-center text-sm text-zinc-600 dark:text-zinc-400">M.S. Student · NTU CSIE · MSLab</p>
+          <!-- <div class="mt-4 flex flex-col gap-2 text-sm"> -->
+            <!-- <div class="flex items-center gap-2"><span class="shrink-0">📍</span><span>Taipei, Taiwan</span></div> -->
+            <!-- TODO: Your contact email -->
+            <!-- <div class="flex items-center gap-2"><span class="shrink-0">✉️</span><a class="underline" href="mailto:you@example.com">you@example.com</a></div> -->
+          <!-- </div> -->
+          <ul class="mt-4 space-y-2 text-sm">
+            <li class="flex items-center gap-2">
+            <!-- Location icon -->
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4">
+                <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/>
+            </svg>
+            <span>Taipei, Taiwan</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <!-- Mail icon -->
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+              <a class="underline" href="mailto:r12922217@csie.ntu.edu.tw">Email</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <!-- X/Twitter icon -->
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4"><path fill="currentColor" d="M3 3h4.6l5.2 7.2L18.4 3H21l-7 9.7L21 21h-4.6l-5.4-7.5L5.6 21H3l7.1-9.9L3 3Z"/></svg>
+              <a class="underline" href="https://x.com/frett_guo" target="_blank" rel="noopener">Twitter</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <!-- GitHub icon -->
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.5-1.5-1.9-1.5-1.9-1.2-.8.1-.8.1-.8 1.3.1 2 .1 2 .1 1.2 2 3.3 1.4 4.1 1.1.1-.9.5-1.4.8-1.7-2.7-.3-5.6-1.4-5.6-6.2 0-1.4.5-2.6 1.3-3.6-.1-.3-.6-1.7.1-3.5 0 0 1.1-.3 3.6 1.3 1-.3 2-.4 3-.4s2 .1 3 .4c2.5-1.6 3.6-1.3 3.6-1.3.7 1.8.2 3.2.1 3.5.8 1 1.3 2.2 1.3 3.6 0 4.8-2.9 5.8-5.6 6.2.5.4.9 1.2.9 2.4v3.6c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+              <a class="underline" href="https://github.com/0Frett" target="_blank" rel="noopener">Github</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <!-- Scholar icon -->
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4"><path fill="currentColor" d="M12 3 2 9l10 6 10-6-10-6Zm6 9.7V18l-6 3-6-3v-5.3l6 3.6 6-3.6Z"/></svg>
+              <a class="underline" href="https://scholar.google.com/citations?user=aDp7aUoAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <!-- CV icon -->
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4"><path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm1 7V3.5L19.5 9H15Z"/></svg>
+              <a class="underline" href="PeiFu_CV.pdf" target="_blank" rel="noopener">Resume/CV</a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <img src="https://avatars.githubusercontent.com/u/0?v=4" alt="Profile" class="w-36 h-36 md:w-40 md:h-40 rounded-2xl object-cover border border-zinc-200 dark:border-zinc-800">
-    </div>
-  </header>
+      </aside>
 
-  <!-- About -->
-  <section id="about" class="mx-auto max-w-4xl px-4 py-10 border-t border-zinc-200 dark:border-zinc-800">
-    <h2 class="text-2xl font-semibold">About</h2>
-    <p class="mt-3 text-zinc-700 dark:text-zinc-300">I’m a master’s student in the <strong>MSLab</strong> at <strong>NTU CSIE</strong> (advisor: Prof. X). My work focuses on <em>target‑aware LLM search</em>, <em>uncertainty estimation</em>, and <em>multilingual knowledge transfer</em>. I enjoy building end‑to‑end evaluation pipelines and clean visualizations.</p>
-  </section>
+      <!-- Main content area -->
+      <section class="space-y-10">
+        <!-- About -->
+        <section id="about">
+          <h2 class="text-2xl font-semibold">About</h2>
+          <p class="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-300">
+            Hi! I am a second-year M.S. student in Computer Science at NTU, advised by Prof. Shou-De Lin. My current research focuses on Natural Language Processing, including LLM hallucination detection, benchmarking, and reasoning. I also have experience developing LLM-based agents for real-world applications. I expect to graduate in February 2026 and intend to pursue a Ph.D. afterward.
+          </p>
+        </section>
 
-  <!-- Publications -->
-  <section id="publications" class="mx-auto max-w-4xl px-4 py-10 border-t border-zinc-200 dark:border-zinc-800">
-    <h2 class="text-2xl font-semibold">Publications & Preprints</h2>
-    <ol class="mt-4 space-y-4 list-decimal pl-6">
-      <li>
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <p class="font-medium">Benchmarking Uncertainty Metrics for Target‑Aware LLM Search</p>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400">Your Name, Coauthors. <span class="italic">Under review</span>, 2025.</p>
-            <div class="mt-2 flex flex-wrap gap-2 text-sm">
-              <a class="underline" href="#">PDF</a>
-              <a class="underline" href="#">Code</a>
-              <button class="underline text-left" data-bibtex-toggle>BibTeX</button>
+        <!-- Publications with year sections like AcademicPages -->
+        <section id="publications" class="pt-2">
+          <h2 class="text-2xl font-semibold">Publications <span class="ml-2 align-middle text-sm text-zinc-600 dark:text-zinc-400">(77 citations by Nov 2025)</span></h2>
+
+          <!-- 2026 -->
+          <!-- <h3 class="mt-6 text-lg font-semibold tracking-tight">2026</h3> -->
+          <ul class="mt-2 space-y-4">
+
+            <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+                <p class="font-medium">
+                    LiveCLKTBench: Towards Reliable Evaluation of Cross-Lingual Knowledge Transfer in Multilingual LLMs.
+                </p>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun-Da Tsai, Chun-Chia Hsu, Kai-Xin Chen, Ya-An Tsai, Kai-Wei Chang, Nanyun Peng, Mi-Yen Yeh, Shou-De Lin.
+                    <em>Under review at ACL ARR (October 2025)</em>.
+                </p>
+            </li>
+
+            <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+              <p class="font-medium">Why is the LLM unsure? Profiling the Causes of LLM Uncertainty for Adaptive Model and Uncertainty Metric Selection.</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun‑Da Tsai, Shou‑De Lin. 
+                    <em>Under review at ICLR 2026</em>.
+              </p>
+              <div class="mt-2 flex flex-wrap gap-3 text-sm">
+                <a class="underline" href="https://arxiv.org/abs/2505.07309" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+              <p class="font-medium">Why is the LLM unsure? Profiling the Causes of LLM Uncertainty for Adaptive Model and Uncertainty Metric Selection.</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun‑Da Tsai, Shou‑De Lin. 
+                <em>Under review at ICLR 2026</em>.
+              </p>
+              <div class="mt-2 flex flex-wrap gap-3 text-sm">
+                <a class="underline" href="https://arxiv.org/abs/2505.07309" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+              <p class="font-medium">Benchmarking Uncertainty Metrics for LLM Target‑Aware Search.</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun‑Da Tsai, Shou‑De Lin. 
+                <em>Findings of EMNLP 2025</em>.
+              </p>
+              <div class="mt-2 flex flex-wrap gap-3 text-sm">
+                <a class="underline" href="https://aclanthology.org/2025.findings-emnlp.226/" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+              <p class="font-medium">Text‑centric Alignment for Bridging Test‑time Unseen Modality.</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    Yun‑Da Tsai*, Ting‑Yu Yen*, <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Shou‑De Lin. 
+                    <em>Findings of EMNLP 2025</em>.
+              </p>
+              <div class="mt-2 flex flex-wrap gap-3 text-sm">
+                <a class="underline" href="https://aclanthology.org/2025.findings-emnlp.206/" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </li>
+
+            <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+              <p class="font-medium">Towards Optimizing with Large Language Models.</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo*</strong>, Ying‑Hsuan Chen*, Yun‑Da Tsai, Shou‑De Lin. 
+                    <em>KDD 2024 Knowledge‑Infused Learning Workshop</em>.
+                </p>
+              <div class="mt-2 flex flex-wrap gap-3 text-sm">
+                <a class="underline" href="https://ceur-ws.org/Vol-3894/paper3.pdf" target="_blank" rel="noopener">Paper</a>
+                <span class="opacity-70">57 citations</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Experience -->
+        <!-- <section id="experience">
+          <h2 class="text-2xl font-semibold">Experience</h2>
+          <div class="mt-4 space-y-4 text-zinc-700 dark:text-zinc-300">
+            <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+              <p class="font-medium">Education</p>
+              <p class="font-medium">M.S. in Computer Science, National Taiwan University (2024/2 ~ Present)</p>
+              <p class="font-medium">B.S. in Economics, National Taiwan University (2019/9 ~ 2023/12)</p>
             </div>
-            <pre class="mt-2 hidden rounded-xl bg-zinc-100 dark:bg-zinc-900 p-3 text-xs overflow-x-auto" data-bibtex>
-@inproceedings{your2025uncertainty,
-  title={Benchmarking Uncertainty Metrics for Target-Aware LLM Search},
-  author={Your Name and Coauthors},
-  year={2025}
-}
-            </pre>
+
+            <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+                <p class="font-medium">Work</p>
+                <p class="font-medium">APPIER - LLM Research Scientist (2024/7 ~ 2025/3)</p>
+            </div>
           </div>
-        </div>
-      </li>
-      <li>
-        <p class="font-medium">LiveCLKTBench: A Refreshable Multilingual Benchmark for Cross‑Lingual Knowledge Transfer</p>
-        <p class="text-sm text-zinc-600 dark:text-zinc-400">Your Name, Coauthors. <span class="italic">Preprint</span>, 2025.</p>
-        <div class="mt-2 flex flex-wrap gap-2 text-sm">
-          <a class="underline" href="#">PDF</a>
-          <a class="underline" href="#">Code</a>
-          <button class="underline text-left" data-bibtex-toggle>BibTeX</button>
-        </div>
-        <pre class="mt-2 hidden rounded-xl bg-zinc-100 dark:bg-zinc-900 p-3 text-xs overflow-x-auto" data-bibtex>
-@article{your2025liveclktbench,
-  title={LiveCLKTBench: A Refreshable Multilingual Benchmark for Cross-Lingual Knowledge Transfer},
-  author={Your Name and Coauthors},
-  year={2025},
-  journal={arXiv preprint}
-}
-        </pre>
-      </li>
-    </ol>
-  </section>
+        </section> -->
 
-  <!-- Projects -->
-  <section id="projects" class="mx-auto max-w-4xl px-4 py-10 border-t border-zinc-200 dark:border-zinc-800">
-    <h2 class="text-2xl font-semibold">Selected Projects</h2>
-    <div class="mt-5 grid md:grid-cols-2 gap-4">
-      <article class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4">
-        <h3 class="font-medium">Distribution Understanding from Comments</h3>
-        <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">End‑to‑end pipeline for stance/target distributions with bootstrap CIs, multi‑language support, and heatmap visualizations.</p>
-        <div class="mt-3 flex gap-3 text-sm">
-          <a class="underline" href="#">Repo</a>
-          <a class="underline" href="#">Demo</a>
+        <!-- Experience -->
+        <section id="experience">
+        <h2 class="text-2xl font-semibold">Experience</h2>
+
+        <div class="mt-4 space-y-6 text-zinc-700 dark:text-zinc-300">
+
+            <!-- Education -->
+            <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+            <h3 class="text-lg font-semibold">Education</h3>
+            <ul class="mt-2 space-y-2">
+                <li>
+                <p class="font-medium">
+                    M.S. in Computer Science & Information Engineering, <span class="font-normal">National Taiwan University</span>
+                </p>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    <time datetime="2024-02">Feb 2024</time> – <span>Present</span>
+                </p>
+                </li>
+                <li>
+                <p class="font-medium">
+                    B.S. in Economics, <span class="font-normal">National Taiwan University</span>
+                </p>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    <time datetime="2019-09">Sep 2019</time> – <time datetime="2023-12">Dec 2023</time>
+                </p>
+                </li>
+            </ul>
+            </div>
+
+            <!-- Work -->
+            <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+            <h3 class="text-lg font-semibold">Work</h3>
+            <ul class="mt-2 space-y-2">
+                <li>
+                
+                <p class="font-medium">
+                    Research Assistant, <span class="font-normal">NTU-MSLab</span>
+                </p>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    <time datetime="2023-03">Mar 2023</time> – <span>Present</span>
+                </p>
+                <li>    
+
+                </li>
+                <p class="font-medium">
+                    LLM Research Scientist, <span class="font-normal">Appier</span>
+                </p>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    <time datetime="2024-07">Jul 2024</time> – <time datetime="2025-03">Mar 2025</time>
+                </p>
+                <!-- Optional bullets (remove if you want it ultra-compact) -->
+                <!--
+                <ul class="mt-1 list-disc pl-5 text-sm">
+                    <li>Built evaluation pipelines for multilingual tasks.</li>
+                    <li>Prototyped uncertainty-aware prompting for LLM agents.</li>
+                </ul>
+                -->
+                </li>
+            </ul>
+            </div>
+
         </div>
-      </article>
-      <article class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4">
-        <h3 class="font-medium">Uncertainty‑Guided Reasoning</h3>
-        <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Comparing answer/correctness/aleatoric/epistemic uncertainty to steer ToT/LATS‑style search strategies.</p>
-        <div class="mt-3 flex gap-3 text-sm">
-          <a class="underline" href="#">Paper</a>
-          <a class="underline" href="#">Code</a>
-        </div>
-      </article>
+        </section>
+
+
+        <!-- Contact -->
+        <!-- <section id="contact">
+          <h2 class="text-2xl font-semibold">Contact</h2>
+          <ul class="mt-3 space-y-3 text-zinc-700 dark:text-zinc-300">
+            <li class="flex items-center gap-2">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+              <a class="underline" href="mailto:r12922217@csie.ntu.edu.tw">r12922217@csie.ntu.edu.tw</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5"><path fill="currentColor" d="M3 3h4.6l5.2 7.2L18.4 3H21l-7 9.7L21 21h-4.6l-5.4-7.5L5.6 21H3l7.1-9.9L3 3Z"/></svg>
+              <a class="underline" href="https://x.com/frett_guo" target="_blank" rel="noopener">@frett_guo</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5"><path fill="currentColor" d="M12 3 2 9l10 6 10-6-10-6Zm6 9.7V18l-6 3-6-3v-5.3l6 3.6 6-3.6Z"/></svg>
+              <a class="underline" href="https://scholar.google.com/citations?user=aDp7aUoAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.5-1.5-1.9-1.5-1.9-1.2-.8.1-.8.1-.8 1.3.1 2 .1 2 .1 1.2 2 3.3 1.4 4.1 1.1.1-.9.5-1.4.8-1.7-2.7-.3-5.6-1.4-5.6-6.2 0-1.4.5-2.6 1.3-3.6-.1-.3-.6-1.7.1-3.5 0 0 1.1-.3 3.6 1.3 1-.3 2-.4 3-.4s2 .1 3 .4c2.5-1.6 3.6-1.3 3.6-1.3.7 1.8.2 3.2.1 3.5.8 1 1.3 2.2 1.3 3.6 0 4.8-2.9 5.8-5.6 6.2.5.4.9 1.2.9 2.4v3.6c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+              <a class="underline" href="https://github.com/0Frett" target="_blank" rel="noopener">github.com/0Frett</a>
+            </li>
+          </ul>
+        </section> -->
+      </section>
     </div>
-  </section>
+  </main>
 
-  <!-- Contact -->
-  <section id="contact" class="mx-auto max-w-4xl px-4 py-10 border-t border-zinc-200 dark:border-zinc-800">
-    <h2 class="text-2xl font-semibold">Contact</h2>
-    <ul class="mt-3 space-y-2 text-zinc-700 dark:text-zinc-300">
-      <li>Email: <a class="underline" href="mailto:you@example.com">you@example.com</a></li>
-      <li>GitHub: <a class="underline" href="https://github.com/your-username">@your-username</a></li>
-      <li>Google Scholar: <a class="underline" href="https://scholar.google.com/citations?user=YOURID">Profile</a></li>
-      <li>Twitter/X: <a class="underline" href="https://x.com/your-handle">@your-handle</a></li>
-    </ul>
-  </section>
-
-  <footer class="mx-auto max-w-4xl px-4 py-8 text-sm text-zinc-500 border-t border-zinc-200 dark:border-zinc-800">
-    © <span id="year"></span> Your Name. Built with Tailwind. Hosted on GitHub Pages.
+  <footer class="mx-auto max-w-content px-4 md:px-6 py-10 text-sm text-zinc-500 border-t border-zinc-200 dark:border-zinc-800">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <!-- TODO: Your name as it should appear in the footer -->
+      <p>© <span id="year"></span> Pei‑Fu Guo.</p>
+      <!-- <p class="opacity-80">Inspired by AcademicPages.</p> -->
+    </div>
   </footer>
 
   <script>
@@ -183,11 +342,10 @@
     // BibTeX toggles
     document.querySelectorAll('[data-bibtex-toggle]').forEach(btn => {
       btn.addEventListener('click', () => {
-        const pre = btn.parentElement.parentElement.querySelector('[data-bibtex]');
+        const pre = btn.parentElement.parentElement.querySelector('[data-bibtex]') || btn.parentElement.nextElementSibling;
         if (pre) pre.classList.toggle('hidden');
       });
     });
   </script>
 </body>
 </html>
-

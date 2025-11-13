@@ -126,91 +126,116 @@
         <section id="about">
           <h2 class="text-2xl font-semibold">About</h2>
           <p class="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-300">
-            Hi! I am a second-year M.S. student in Computer Science at NTU, advised by Prof. Shou-De Lin. My current research focuses on Natural Language Processing, including LLM hallucination detection, benchmarking, and reasoning. I also have experience developing LLM-based agents for real-world applications. I expect to graduate in February 2026 and intend to pursue a Ph.D. afterward.
+            I'm currently a second-year M.S. student in Computer Science at NTU, advised by Prof. Shou-De Lin. 
+            <!-- My current research focuses on Natural Language Processing (NLP), particularly in: -->
+            My research focuses on Natural Language Processing (NLP), particularly in the following areas:
           </p>
+          <ul class="list-disc list-inside text-zinc-700 dark:text-zinc-300 mt-4 space-y-2">
+            <li><strong>LLM Uncertainty/Confidence Estimation:</strong> How can we quantify the uncertainty of LLMs for a given question and assess the confidence of their responses across different tasks?.</li>
+            <li><strong>LLM Evaluation:</strong> Developing automatic and contamination-controlled benchmarks to systematically evaluate diverse abilities of LLMs.</li>
+            <li><strong>LLM Applications:</strong> Leveraging LLMs to address domain-specific challenges.</li>
+          </ul>
+          <p class="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-300">
+            I expect to graduate in January 2026 and am applying for Ph.D. programs starting in Fall 2026.
+          </p>
+
+          <!-- </p> -->
         </section>
 
         <!-- Publications with year sections like AcademicPages -->
         <section id="publications" class="pt-2">
           <h2 class="text-2xl font-semibold">Publications <span class="ml-2 align-middle text-sm text-zinc-600 dark:text-zinc-400">(77 citations by Nov 2025)</span></h2>
 
-          <!-- 2026 -->
-          <!-- <h3 class="mt-6 text-lg font-semibold tracking-tight">2026</h3> -->
           <ul class="mt-2 space-y-4">
 
+            <!-- Paper 1 -->
             <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-                <p class="font-medium">
-                    LiveCLKTBench: Towards Reliable Evaluation of Cross-Lingual Knowledge Transfer in Multilingual LLMs.
-                </p>
-                <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                    <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun-Da Tsai, Chun-Chia Hsu, Kai-Xin Chen, Ya-An Tsai, Kai-Wei Chang, Nanyun Peng, Mi-Yen Yeh, Shou-De Lin.
-                    <em>Under review at ACL ARR (October 2025)</em>.
-                </p>
+              <p class="font-medium mb-1">
+                LiveCLKTBench: Towards Reliable Evaluation of Cross-Lingual Knowledge Transfer in Multilingual LLMs.
+                <span class="ml-2 inline-block text-xs font-semibold px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-200 text-black">LLM Evaluation</span>
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-1">
+                <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun-Da Tsai, Chun-Chia Hsu, Kai-Xin Chen, Ya-An Tsai, Kai-Wei Chang, Nanyun Peng, Mi-Yen Yeh, Shou-De Lin
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-2">
+                <em>Under review at ACL ARR (October 2025)</em>
+              </p>
+              <div class="mt-2 flex flex-wrap gap-3 text-sm">
+                <a class="underline" href="#">Paper</a>
+              </div>
             </li>
 
+            <!-- Paper 2 -->
             <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-              <p class="font-medium">Why is the LLM unsure? Profiling the Causes of LLM Uncertainty for Adaptive Model and Uncertainty Metric Selection.</p>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                    <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun‑Da Tsai, Shou‑De Lin. 
-                    <em>Under review at ICLR 2026</em>.
+              <p class="font-medium mb-1">
+                Why is the LLM unsure? Profiling the Causes of LLM Uncertainty for Adaptive Model and Uncertainty Metric Selection.
+                <span class="ml-2 inline-block text-xs font-semibold px-2 py-0.5 rounded-md bg-red-100 dark:bg-red-200 text-black">LLM Uncertainty</span>
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-1">
+                <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun‑Da Tsai, Shou‑De Lin
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-2">
+                <em>Under review at ICLR 2026</em>
               </p>
               <div class="mt-2 flex flex-wrap gap-3 text-sm">
                 <a class="underline" href="https://arxiv.org/abs/2505.07309" target="_blank" rel="noopener">Paper</a>
               </div>
             </li>
 
+            <!-- Paper 3 -->
             <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-              <p class="font-medium">Benchmarking Uncertainty Metrics for LLM Target‑Aware Search.</p>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun‑Da Tsai, Shou‑De Lin. 
-                <em>Findings of EMNLP 2025</em>.
+              <p class="font-medium mb-1">
+                Benchmarking Uncertainty Metrics for LLM Target‑Aware Search.
+                <span class="ml-2 inline-block text-xs font-semibold px-2 py-0.5 rounded-md bg-red-100 dark:bg-red-200 text-black">LLM Uncertainty</span>
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-1">
+                <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Yun‑Da Tsai, Shou‑De Lin
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-2">
+                <em>Findings of EMNLP 2025</em>
               </p>
               <div class="mt-2 flex flex-wrap gap-3 text-sm">
                 <a class="underline" href="https://aclanthology.org/2025.findings-emnlp.226/" target="_blank" rel="noopener">Paper</a>
               </div>
             </li>
 
+            <!-- Paper 4 -->
             <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-              <p class="font-medium">Text‑centric Alignment for Bridging Test‑time Unseen Modality.</p>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                    Yun‑Da Tsai*, Ting‑Yu Yen*, <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Shou‑De Lin. 
-                    <em>Findings of EMNLP 2025</em>.
+              <p class="font-medium mb-1">
+                Text‑centric Alignment for Bridging Test‑time Unseen Modality.
+                <span class="ml-2 inline-block text-xs font-semibold px-2 py-0.5 rounded-md bg-green-100 dark:bg-green-200 text-black">LLM Applications</span>
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-1">
+                Yun‑Da Tsai*, Ting‑Yu Yen*, <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo</strong>, Shou‑De Lin
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-2">
+                <em>Findings of EMNLP 2025</em>
               </p>
               <div class="mt-2 flex flex-wrap gap-3 text-sm">
                 <a class="underline" href="https://aclanthology.org/2025.findings-emnlp.206/" target="_blank" rel="noopener">Paper</a>
               </div>
             </li>
 
+            <!-- Paper 5 -->
             <li class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-              <p class="font-medium">Towards Optimizing with Large Language Models.</p>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                    <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo*</strong>, Ying‑Hsuan Chen*, Yun‑Da Tsai, Shou‑De Lin. 
-                    <em>KDD 2024 Knowledge‑Infused Learning Workshop</em>.
-                </p>
+              <p class="font-medium mb-1">
+                Towards Optimizing with Large Language Models.
+                <span class="ml-2 inline-block text-xs font-semibold px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-200 text-black">LLM Evaluation</span>
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-1">
+                <strong class="text-zinc-900 dark:text-white font-semibold">Pei-Fu Guo*</strong>, Ying‑Hsuan Chen*, Yun‑Da Tsai, Shou‑De Lin
+              </p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-2">
+                <em>KDD 2024 Knowledge‑Infused Learning Workshop</em>
+              </p>
               <div class="mt-2 flex flex-wrap gap-3 text-sm">
                 <a class="underline" href="https://ceur-ws.org/Vol-3894/paper3.pdf" target="_blank" rel="noopener">Paper</a>
                 <span class="opacity-70">57 citations</span>
               </div>
             </li>
+
           </ul>
         </section>
-
-        <!-- Experience -->
-        <!-- <section id="experience">
-          <h2 class="text-2xl font-semibold">Experience</h2>
-          <div class="mt-4 space-y-4 text-zinc-700 dark:text-zinc-300">
-            <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-              <p class="font-medium">Education</p>
-              <p class="font-medium">M.S. in Computer Science, National Taiwan University (2024/2 ~ Present)</p>
-              <p class="font-medium">B.S. in Economics, National Taiwan University (2019/9 ~ 2023/12)</p>
-            </div>
-
-            <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-                <p class="font-medium">Work</p>
-                <p class="font-medium">APPIER - LLM Research Scientist (2024/7 ~ 2025/3)</p>
-            </div>
-          </div>
-        </section> -->
 
         <!-- Experience -->
         <section id="experience">
